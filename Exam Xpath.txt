@@ -1,0 +1,2 @@
+//td[text()='Sài Gòn']/following-sibling::td[text()='Phan Thiết']/../td[4]
+//td[text()='Sài Gòn']/following-sibling::td[text()='Phan Thiết']/../td[5]
