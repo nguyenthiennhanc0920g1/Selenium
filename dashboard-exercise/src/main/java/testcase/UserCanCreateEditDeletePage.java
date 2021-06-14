@@ -19,8 +19,9 @@ public class UserCanCreateEditDeletePage {
     @BeforeMethod //chrome
     public void beforeMethod() {
         System.out.println("Pre-condi    tion");
-        System.setProperty("webdriver.chrome.driver", "D:\\Logigear\\Training\\Automation\\Selenum\\" +
-                "Selenium Jars and Drivers\\Drivers\\Chrome Driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",
+                "D:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers" +
+                        "\\Chrome Driver\\chromedriver.exe");
         Constant.DRIVER = new ChromeDriver();
         Constant.DRIVER.manage().window().maximize();
     }
@@ -37,10 +38,10 @@ public class UserCanCreateEditDeletePage {
     @AfterMethod
     public void afterMethod() {
         System.out.println("Post-condition");
-        Constant.DRIVER.quit();
+//        Constant.DRIVER.quit();
     }
 
-    @Test(invocationCount = 10)
+    @Test(invocationCount = 1)
     public void TC001() {
         //start TC001
         System.out.println("TC001-Verify that user can add page");
