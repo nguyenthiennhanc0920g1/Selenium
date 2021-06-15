@@ -12,8 +12,8 @@ pageobject/TimetablePage.java
  pageobject.TimetablePage
 pageobject/BasePage.java
  pageobject.BasePage
-testcase/TestDemo.java
- testcase.TestDemo
+pageobject/MyTicketPage.java
+ pageobject.MyTicketPage
 pageobject/ChangePasswordPage.java
  pageobject.ChangePasswordPage
 pageobject/ContactPage.java
@@ -22,5 +22,5 @@ pageobject/RegisterPage.java
  pageobject.RegisterPage
 pageobject/FAQPage.java
  pageobject.FAQPage
-pageobject/MyTicketPage.java
- pageobject.MyTicketPage
+testcase/TestDemo.java
+ testcase.TestDemo

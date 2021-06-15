@@ -25,7 +25,9 @@ public class TestDemo {
 
     @Test
     public void TC1() {
+        BasePage.webDriver.get(Constant.HOME_URL);
         LoginPage loginPage = new LoginPage();
+        loginPage.clickToElement(loginPage.getLoginTab());
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
     }
 }

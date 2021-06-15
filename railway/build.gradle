@@ -9,19 +9,30 @@ repositories {
     mavenCentral()
 }
 
+//dependencies {
+//    implementation 'org.testng:testng:7.1.0'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+//
+//    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+//    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
+//
+//    // https://mvnrepository.com/artifact/org.testng/testng
+//    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+//
+//}
+
 dependencies {
     implementation 'org.testng:testng:7.1.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
-
-    // https://mvnrepository.com/artifact/org.testng/testng
-    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
-
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.3.0'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.141.59'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: '3.141.59'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-edge-driver', version: '3.141.59'
 }
-
 test {
     useJUnitPlatform()
 }
