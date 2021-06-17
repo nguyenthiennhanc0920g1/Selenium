@@ -5,63 +5,69 @@ import org.openqa.selenium.WebDriver;
 
 abstract public class BasePage {
     public static WebDriver webDriver;
-    private final By homeTab = By.xpath("//span[text()='Home']");
-    private final By FAQTab = By.xpath("//span[text()='FAQ']");
-    private final By ContactTab = By.xpath("//span[text()='Contact']");
-    private final By TimetableTab = By.xpath("//span[text()='Timetable']");
-    private final By TicketPriceTab = By.xpath("//span[text()='Ticket Price']");
-    private final By BookTicketTab = By.xpath("//span[text()='Book ticket']");
-    private final By MyTicketTab = By.xpath("//span[text()='My ticket']");
-    private final By ChangePasswordTab = By.xpath("//span[text()='Change password']");
-    private final By LogoutTab = By.xpath("//span[text()='Log out']");
-    private final By LoginTab = By.xpath("//span[text()='Login']");
-    private final By RegisterTab = By.xpath("//span[text()='Register']");
+    private static final By homeTab = By.xpath("//span[text()='Home']");
+    private static final By FAQTab = By.xpath("//span[text()='FAQ']");
+    private static final By contactTab = By.xpath("//span[text()='Contact']");
+    private static final By timetableTab = By.xpath("//span[text()='Timetable']");
+    private static final By ticketPriceTab = By.xpath("//span[text()='Ticket Price']");
+    private static final By bookTicketTab = By.xpath("//span[text()='Book ticket']");
+    private static final By myTicketTab = By.xpath("//span[text()='My ticket']");
+    private static final By changePasswordTab = By.xpath("//span[text()='Change password']");
+    private static final By logoutTab = By.xpath("//span[text()='Log out']");
+    private static final By loginTab = By.xpath("//span[text()='Login']");
+    private static final By registerTab = By.xpath("//span[text()='Register']");
+    private static final By welcomeMessage = By.xpath("//*[@id=\"banner\"]/div/strong");
 
-    public By getHomeTab() {
+
+    public static By getHomeTab() {
         return homeTab;
     }
 
-    public By getFAQTab() {
+    public static By getFAQTab() {
         return FAQTab;
     }
 
-    public By getContactTab() {
-        return ContactTab;
+    public static By getContactTab() {
+        return contactTab;
     }
 
-    public By getTimetableTab() {
-        return TimetableTab;
+    public static By getTimetableTab() {
+        return timetableTab;
     }
 
-    public By getTicketPriceTab() {
-        return TicketPriceTab;
+    public static By getTicketPriceTab() {
+        return ticketPriceTab;
     }
 
-    public By getBookTicketTab() {
-        return BookTicketTab;
+    public static By getBookTicketTab() {
+        return bookTicketTab;
     }
 
-    public By getMyTicketTab() {
-        return MyTicketTab;
+    public static By getMyTicketTab() {
+        return myTicketTab;
     }
 
-    public By getChangePasswordTab() {
-        return ChangePasswordTab;
+    public static By getChangePasswordTab() {
+        return changePasswordTab;
     }
 
-    public By getLogoutTab() {
-        return LogoutTab;
+    public static By getLogoutTab() {
+        return logoutTab;
     }
 
-    public By getLoginTab() {
-        return LoginTab;
+    public static By getLoginTab() {
+        return loginTab;
     }
 
-    public By getRegisterTab() {
-        return RegisterTab;
+    public static By getRegisterTab() {
+        return registerTab;
     }
 
-    public void clickToElement(By locator) {
+    public static By getWelcomeMessage() {
+        return welcomeMessage;
+    }
+
+    public static void goToTab(By locator) {
         webDriver.findElement(locator).click();
     }
 }

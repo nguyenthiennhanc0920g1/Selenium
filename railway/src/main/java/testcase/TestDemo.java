@@ -1,33 +1,19 @@
 package testcase;
 
+import common.common.Check;
 import constant.Constant;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 import pageobject.BasePage;
 import pageobject.LoginPage;
 
-public class TestDemo {
-    @BeforeMethod
-    public void beforeMethod() {
-        System.out.println("Pre-condition");
-        System.setProperty("webdriver.chrome.driver",
-                "D:/Logigear/Training/Automation/Selenium/Selenium Jars and Drivers/Drivers" +
-                        "/Chrome Driver/chromedriver.exe");
-        BasePage.webDriver = new ChromeDriver();
-        BasePage.webDriver.manage().window().maximize();
-    }
-
-    @AfterMethod
-    public void afterMethod() {
-        System.out.println("Final-condition");
-//        BasePage.webDriver.quit();
-    }
-
+public class TestDemo extends BaseTest {
     @Test
-    public void TC1() {
-        BasePage.webDriver.get(Constant.HOME_URL);
+    public void testBayBa(){
+        BasePage.goToTab(BasePage.getLoginTab());
         LoginPage loginPage = new LoginPage();
-        loginPage.clickToElement(loginPage.getLoginTab());
-        loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+        loginPage.login("asdasdsd", Constant.PASSWORD);
+        Check.isCheckLogin("asdasdsd");
+        boolean check = Check.isCheckLogin("asdasdsd");
+        System.out.println(check);
     }
 }

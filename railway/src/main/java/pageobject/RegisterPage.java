@@ -1,6 +1,8 @@
 package pageobject;
 
+import common.util.Scroll;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class RegisterPage extends BasePage {
     private final By loginLink = By.xpath("//a[text()='login']");
@@ -9,10 +11,15 @@ public class RegisterPage extends BasePage {
     private final By passwordTxt = By.id("password");
     private final By confirmPasswordTxt = By.id("confirmPassword");
     private final By passportTxt = By.id("pid");
-    private final By registerButton = By.xpath("//*[@id='RegisterForm']/fieldset/p/input");
+    private final By registerButton = By.xpath("//input[@value='Register']");
+    private final By registerMessage = By.xpath("//*[@id=\"content\"]/p");
 
     public By getLoginLink() {
         return loginLink;
+    }
+
+    public By getRegisterMessage() {
+        return registerMessage;
     }
 
     public By getConfirmationLink() {
@@ -44,6 +51,9 @@ public class RegisterPage extends BasePage {
         BasePage.webDriver.findElement(passwordTxt).sendKeys(password);
         BasePage.webDriver.findElement(confirmPasswordTxt).sendKeys(confirmPassword);
         BasePage.webDriver.findElement(passportTxt).sendKeys(passportNumber);
+        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(registerButton).click();
     }
 }
+
+

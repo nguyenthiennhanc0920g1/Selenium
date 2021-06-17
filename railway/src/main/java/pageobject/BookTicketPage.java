@@ -9,7 +9,8 @@ public class BookTicketPage extends BasePage {
     private final By arriveAtSelect = By.name("ArriveStation");
     private final By seatTypeSelect = By.name("SeatType");
     private final By ticketAmountSelect = By.name("TicketAmount");
-    private final By bookTicketButton = By.xpath("//*[@id='content']/div[1]/form/fieldset/input");
+    private final By bookTicketButton = By.xpath("//input[@value='Book ticket']");
+    private final By bookTicketForm = By.xpath("//legend[text()='Book ticket form']");
 
     public By getDepartDateSelect() {
         return departDateSelect;
@@ -17,6 +18,10 @@ public class BookTicketPage extends BasePage {
 
     public By getDepartFromSelect() {
         return departFromSelect;
+    }
+
+    public By getBookTicketForm() {
+        return bookTicketForm;
     }
 
     public By getArriveAtSelect() {
