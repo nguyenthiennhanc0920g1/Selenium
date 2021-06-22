@@ -2,7 +2,6 @@ package pageobject;
 
 import common.util.Scroll;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class RegisterPage extends BasePage {
     private final By loginLink = By.xpath("//a[text()='login']");
@@ -13,6 +12,10 @@ public class RegisterPage extends BasePage {
     private final By passportTxt = By.id("pid");
     private final By registerButton = By.xpath("//input[@value='Register']");
     private final By registerMessage = By.xpath("//*[@id=\"content\"]/p");
+    private final By registerErrorMessage = By.xpath("//p[@class='message error']");
+    private final By passwordFieldErrorMessage = By.xpath("//label[@for='password' and @class='validation-error']");
+    private final By passportFieldErrorMessage = By.xpath("//label[@for='pid' and @class='validation-error']");
+
 
     public By getLoginLink() {
         return loginLink;
@@ -28,6 +31,18 @@ public class RegisterPage extends BasePage {
 
     public By getEmailTxt() {
         return emailTxt;
+    }
+
+    public By getRegisterErrorMessage() {
+        return registerErrorMessage;
+    }
+
+    public By getPasswordFieldErrorMessage() {
+        return passwordFieldErrorMessage;
+    }
+
+    public By getPassportFieldErrorMessage() {
+        return passportFieldErrorMessage;
     }
 
     public By getPasswordTxt() {
@@ -55,5 +70,3 @@ public class RegisterPage extends BasePage {
         BasePage.webDriver.findElement(registerButton).click();
     }
 }
-
-

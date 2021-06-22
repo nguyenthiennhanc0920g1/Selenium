@@ -11,11 +11,9 @@ public class BaseTest {
     public void beforeClass() {
         System.out.println("Pre-condition");
         System.setProperty("webdriver.chrome.driver",
-                "D:/Logigear/Training/Automation/Selenium/Selenium Jars and Drivers/Drivers" +
-                        "/Chrome Driver/chromedriver.exe");
+                "E:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers\\Chrome Driver/chromedriver.exe");
         BasePage.webDriver = new ChromeDriver();
         BasePage.webDriver.manage().window().maximize();
-        BasePage.webDriver.get(Constant.HOME_URL);
     }
 
     @AfterClass

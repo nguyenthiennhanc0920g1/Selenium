@@ -1,40 +1,62 @@
+pageobject/HomePage.java
+ pageobject.HomePage
+pageobject/LoginPage.java
+ pageobject.LoginPage
+testcase/TC08.java
+ testcase.TC08
 constant/Constant.java
  constant.Constant
 common/util/Number.java
  common.util.Number
-testcase/BaseTest.java
- testcase.BaseTest
-pageobject/HomePage.java
- pageobject.HomePage
-pageobject/BookTicketPage.java
- pageobject.BookTicketPage
-common/util/Scroll.java
- common.util.Scroll
-pageobject/TicketPricePage.java
- pageobject.TicketPricePage
 pageobject/LogoutPage.java
  pageobject.LogoutPage
-pageobject/MyTicketPage.java
- pageobject.MyTicketPage
-pageobject/LoginPage.java
- pageobject.LoginPage
-pageobject/FAQPage.java
- pageobject.FAQPage
+common/common/Check.java
+ common.common.Check
 pageobject/TimetablePage.java
  pageobject.TimetablePage
 pageobject/BasePage.java
  pageobject.BasePage
-pageobject/RegisterPage.java
- pageobject.RegisterPage
-pageobject/ChangePasswordPage.java
- pageobject.ChangePasswordPage
+pageobject/MyTicketPage.java
+ pageobject.MyTicketPage
 pageobject/ContactPage.java
  pageobject.ContactPage
-common/common/Check.java
- common.common.Check
-testcase/LoginTest.java
- testcase.LoginTest
-testcase/TestDemo.java
- testcase.TestDemo
-testcase/RegisterTest.java
- testcase.RegisterTest
+pageobject/ChangePasswordPage.java
+ pageobject.ChangePasswordPage
+pageobject/FAQPage.java
+ pageobject.FAQPage
+testcase/BaseTest.java
+ testcase.BaseTest
+pageobject/TicketPricePage.java
+ pageobject.TicketPricePage
+pageobject/RegisterPage.java
+ pageobject.RegisterPage
+common/util/Scroll.java
+ common.util.Scroll
+testcase/TC06.java
+ testcase.TC06
+testcase/TC10.java
+ testcase.TC10
+testcase/TC09.java
+ testcase.TC09
+testcase/TC02.java
+ testcase.TC02
+testcase/TC11.java
+ testcase.TC11
+testcase/TC03.java
+ testcase.TC03
+testcase/TC07.java
+ testcase.TC07
+testcase/TC04.java
+ testcase.TC04
+testcase/TC01.java
+ testcase.TC01
+testcase/TC05.java
+ testcase.TC05
+testcase/Main.java
+ testcase.Main
+common/util/Time.java
+ common.util.Time
+pageobject/BookTicketPage.java
+ pageobject.BookTicketPage
+testcase/TC14.java
+ testcase.TC14

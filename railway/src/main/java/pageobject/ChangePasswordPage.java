@@ -1,5 +1,6 @@
 package pageobject;
 
+import common.util.Scroll;
 import org.openqa.selenium.By;
 
 public class ChangePasswordPage extends BasePage {
@@ -8,9 +9,14 @@ public class ChangePasswordPage extends BasePage {
     private final By confirmPasswordTxt = By.id("confirmPassword");
     private final By changePasswordButton = By.xpath("//input[@value='Change Password']");
     private final By title = By.xpath("//h1[text()='Change password']");
+    private final By changePasswordMessage = By.xpath("//*[@id=\"ChangePW\"]/fieldset/p[1]");
 
     public By getTitle() {
         return title;
+    }
+
+    public By getChangePasswordMessage() {
+        return changePasswordMessage;
     }
 
     public By getCurrentPasswordTxt() {
@@ -33,6 +39,7 @@ public class ChangePasswordPage extends BasePage {
         BasePage.webDriver.findElement(currentPasswordTxt).sendKeys(currentPassword);
         BasePage.webDriver.findElement(newPasswordTxt).sendKeys(newPassword);
         BasePage.webDriver.findElement(confirmPasswordTxt).sendKeys(confirmPassword);
+        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(changePasswordButton).click();
     }
 }
