@@ -18,7 +18,7 @@ public class TC02 extends BaseTest {
         BasePage.goToTab(BasePage.getLoginTab());
         //STEP 3 & STEP 4: User doesn't type any words into "Username" textbox but enter valid information into "Password" textbox & Click on "Login" button
         loginPage.login("", Constant.PASSWORD);
-        //Expected Behavior: User can't login and message "There was a problem with your login and/or errors exist in your form. " appears.
+        //Expected Behavior: User can't login and message "There was a problem with your login and/or errors exist in your form." appears.
         String actual = BasePage.webDriver.findElement(loginPage.getErrorLoginFormMessage()).getText();
         String expected = "There was a problem with your login and/or errors exist in your form.";
         String errorMessage = "The message content is incorrect";

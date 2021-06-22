@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" verbose="1">
+    <test name="ChromeTest">
+        <classes>
+            <class name="testcase.TC01"/>
+            <class name="testcase.TC02"/>
+            <class name="testcase.TC03"/>
+            <class name="testcase.TC04"/>
+            <class name="testcase.TC05"/>
+            <class name="testcase.TC06"/>
+            <class name="testcase.TC07"/>
+            <class name="testcase.TC08"/>
+            <class name="testcase.TC09"/>
+            <class name="testcase.TC10"/>
+            <class name="testcase.TC11"/>
+            <class name="testcase.TC14"/>
+            <class name="testcase.TC15"/>
+            <class name="testcase.TC16"/>
+        </classes>
+    </test>
+</suite>

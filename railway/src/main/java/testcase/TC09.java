@@ -2,7 +2,6 @@ package testcase;
 
 import common.common.Check;
 import constant.Constant;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobject.BasePage;
 import pageobject.ChangePasswordPage;
@@ -26,9 +25,6 @@ public class TC09 extends BaseTest {
         //STEP 4 & STEP 5: Enter valid value into all fields & Click on "Change Password" button
         changePasswordPage.changePassword(Constant.PASSWORD, Constant.PASSWORD, Constant.PASSWORD);
         //Expected Behavior: Message "Your password has been updated" appears.
-        String actualMessage = BasePage.webDriver.findElement(changePasswordPage.getChangePasswordMessage()).getText();
-        String expectedMessage = "Your password has been updated";
-        String errorMessage = "The message content is incorrect";
-        Assert.assertEquals(actualMessage, expectedMessage, errorMessage);
+        Check.checkChangePassword();
     }
 }

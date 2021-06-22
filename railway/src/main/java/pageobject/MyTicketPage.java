@@ -1,5 +1,6 @@
 package pageobject;
 
+import common.util.Scroll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
@@ -36,11 +37,10 @@ public class MyTicketPage extends BasePage {
         return title;
     }
 
-    public void deleteTicket(String departStation, String arriveStation, String seatType, String departDate,
-                             String bookDate, String amount) {
+    public void deleteTicket(String departStation, String arriveStation, String seatType, String departDate, String amount) {
         By deleteButton = By.xpath("//td[2][text()='" + departStation + "']/../td[text()='" + arriveStation + "']" +
-                "/../td[text()='" + seatType + "']/../td[text()='" + departDate + "']/../td[text()='" + bookDate + "']" +
-                "/../td[text()='" + amount + "']/../td/input");
+                "/../td[text()='" + seatType + "']/../td[text()='" + departDate + "']/../td[text()='" + amount + "']/../td/input");
+        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(deleteButton).click();
         BasePage.webDriver.switchTo().alert().accept();
     }

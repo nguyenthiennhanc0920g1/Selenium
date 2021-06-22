@@ -12,9 +12,8 @@ public class TimetablePage extends BasePage {
         BasePage.webDriver.findElement(checkPriceButton).click();
     }
 
-    public void goToBookTicketPage(String departStation, String arriveStation, String departTime, String arriveTime) {
-        By bookTicketButton = By.xpath("//td[2][text()='" + departStation + "']/../td[text()='" + arriveStation + "']" +
-                "/../td[text()='" + departTime + "']/../td[text()='" + arriveTime + "']/../td/a[text()='book ticket']");
+    public void goToBookTicketPage(String departStation, String arriveStation) {
+        By bookTicketButton = By.xpath("//td[2][text()='" + departStation + "']/../td[text()='" + arriveStation + "']/../td/a[text()='book ticket']");
         Scroll.scrollToBottom();
         BasePage.webDriver.findElement(bookTicketButton).click();
     }

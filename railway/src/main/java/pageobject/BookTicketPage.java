@@ -1,6 +1,7 @@
 package pageobject;
 
 import common.util.Number;
+import common.util.Scroll;
 import common.util.Time;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
@@ -8,11 +9,14 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 
 public class BookTicketPage extends BasePage {
-    private final By departDateSelect = By.name("Date");
-    private final By departFromSelect = By.name("DepartStation");
-    private final By arriveAtSelect = By.name("ArriveStation");
-    private final By seatTypeSelect = By.name("SeatType");
-    private final By ticketAmountSelect = By.name("TicketAmount");
+    private static String departFrom = "";
+    private final By departDateSelectBox = By.name("Date");
+    private final By departFromSelectBox = By.name("DepartStation");
+    private final By arriveAtSelectBox = By.name("ArriveStation");
+    private final By seatTypeSelectBox = By.name("SeatType");
+    private final By ticketAmountSelectBox = By.name("TicketAmount");
+    private final By departFromSelected = By.xpath("//select[@name='DepartStation']/option[@selected='selected']");
+    private final By arriveAtSelected = By.xpath("//select[@name='ArriveStation']/option[@selected='selected']");
     private final By bookTicketButton = By.xpath("//input[@value='Book ticket']");
     private final By bookTicketForm = By.xpath("//legend[text()='Book ticket form']");
     private final By bookTicketMessage = By.xpath("//h1[text()='Ticket Booked Successfully!']");
@@ -22,16 +26,48 @@ public class BookTicketPage extends BasePage {
     private final By departDateResult = By.xpath("//td[4]");
     private final By amountTicketResult = By.xpath("//td[7]");
 
-    public By getDepartDateSelect() {
-        return departDateSelect;
+    public static String getDepartFrom() {
+        return departFrom;
     }
 
-    public By getDepartFromSelect() {
-        return departFromSelect;
+    public By getDepartDateSelectBox() {
+        return departDateSelectBox;
+    }
+
+    public By getDepartFromSelectBox() {
+        return departFromSelectBox;
+    }
+
+    public By getArriveAtSelectBox() {
+        return arriveAtSelectBox;
+    }
+
+    public By getSeatTypeSelectBox() {
+        return seatTypeSelectBox;
+    }
+
+    public By getTicketAmountSelectBox() {
+        return ticketAmountSelectBox;
+    }
+
+    public By getDepartFromSelected() {
+        return departFromSelected;
+    }
+
+    public By getArriveAtSelected() {
+        return arriveAtSelected;
+    }
+
+    public By getBookTicketButton() {
+        return bookTicketButton;
     }
 
     public By getBookTicketForm() {
         return bookTicketForm;
+    }
+
+    public By getBookTicketMessage() {
+        return bookTicketMessage;
     }
 
     public By getDepartFromResult() {
@@ -54,44 +90,25 @@ public class BookTicketPage extends BasePage {
         return amountTicketResult;
     }
 
-    public By getBookTicketMessage() {
-        return bookTicketMessage;
-    }
-
-    public By getArriveAtSelect() {
-        return arriveAtSelect;
-    }
-
-    public By getSeatTypeSelect() {
-        return seatTypeSelect;
-    }
-
-    public By getTicketAmountSelect() {
-        return ticketAmountSelect;
-    }
-
-    public By getBookTicketButton() {
-        return bookTicketButton;
-    }
-
     public void bookTicket(String departDate, String departFrom, String arriveAt, String seatType, String ticketAmount) {
-        Select dateSelect = new Select(BasePage.webDriver.findElement(departDateSelect));
+        Select dateSelect = new Select(BasePage.webDriver.findElement(departDateSelectBox));
         dateSelect.selectByVisibleText(departDate);
-        Select fromSelect = new Select(BasePage.webDriver.findElement(departFromSelect));
+        Select fromSelect = new Select(BasePage.webDriver.findElement(departFromSelectBox));
         fromSelect.selectByVisibleText(departFrom);
-        Select atSelect = new Select(BasePage.webDriver.findElement(arriveAtSelect));
+        Select atSelect = new Select(BasePage.webDriver.findElement(arriveAtSelectBox));
         atSelect.selectByVisibleText(arriveAt);
-        Select seatSelect = new Select(BasePage.webDriver.findElement(seatTypeSelect));
+        Select seatSelect = new Select(BasePage.webDriver.findElement(seatTypeSelectBox));
         seatSelect.selectByVisibleText(seatType);
-        Select amountSelect = new Select(BasePage.webDriver.findElement(ticketAmountSelect));
+        Select amountSelect = new Select(BasePage.webDriver.findElement(ticketAmountSelectBox));
         amountSelect.selectByVisibleText(ticketAmount);
+        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(bookTicketButton).click();
     }
 
     public static ArrayList<String> getDepartDateList() {
         ArrayList<String> departDateList = new ArrayList<String>();
         String currentDate = (java.time.LocalDate.now()).toString();
-        for (int i = 4; i < 31; i++) {
+        for (int i = 4; i < 30; i++) {
             String date = Time.IncreaseOrDecreaseDay("M/d/yyyy", currentDate, i);
             departDateList.add(date);
         }
@@ -119,13 +136,12 @@ public class BookTicketPage extends BasePage {
     public static String getDepartFromRandom() {
         String[] departFromList = BookTicketPage.getDepartFromList();
         int number = Number.generateRandomInt(0, 5);
-        return departFromList[number];
+        return BookTicketPage.departFrom = departFromList[number];
     }
 
     public static String getArriveAtRandom() {
-        String departFrom = BookTicketPage.getDepartFromRandom();
         String[] arriveAt = null;
-        switch (departFrom) {
+        switch (BookTicketPage.departFrom) {
             case "Sài Gòn":
                 arriveAt = new String[]{"Phan Thiết", "Nha Trang", "Đà Nẵng", "Huế", "Quảng Ngãi"};
                 int number = Number.generateRandomInt(0, 4);

@@ -1,8 +1,8 @@
 package testcase;
 
+import common.common.Check;
 import common.util.Number;
 import constant.Constant;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobject.BasePage;
 import pageobject.RegisterPage;
@@ -23,9 +23,6 @@ public class TC07 extends BaseTest {
         String password = "valid password";
         registerPage.register(rdEmail, password, password, rdPassport);
         //Expected Behavior: New account is created and message "Thank you for registering your account" appears.
-        String actualMessage = BasePage.webDriver.findElement(registerPage.getRegisterMessage()).getText();
-        String expectedMessage = "Thank you for registering your account";
-        String errorMessage = "The message content is incorrect";
-        Assert.assertEquals(actualMessage, expectedMessage, errorMessage);
+        Check.checkRegister();
     }
 }
