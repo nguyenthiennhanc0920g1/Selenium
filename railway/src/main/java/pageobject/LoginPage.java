@@ -51,9 +51,9 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String username, String password) {
+        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(emailTxt).sendKeys(username);
         BasePage.webDriver.findElement(passwordTxt).sendKeys(password);
-        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(loginButton).click();
     }
 }

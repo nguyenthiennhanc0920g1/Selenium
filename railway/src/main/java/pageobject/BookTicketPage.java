@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class BookTicketPage extends BasePage {
     private static String departFrom = "";
@@ -91,17 +92,20 @@ public class BookTicketPage extends BasePage {
     }
 
     public void bookTicket(String departDate, String departFrom, String arriveAt, String seatType, String ticketAmount) {
+        Scroll.scrollToBottom();
         Select dateSelect = new Select(BasePage.webDriver.findElement(departDateSelectBox));
         dateSelect.selectByVisibleText(departDate);
         Select fromSelect = new Select(BasePage.webDriver.findElement(departFromSelectBox));
         fromSelect.selectByVisibleText(departFrom);
+        BasePage.webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        BasePage.webDriver.findElement(By.xpath("//span[@id='ArriveStation']/select/option[text()='" + arriveAt + "']"));
+        Time.waitLoadContent(5000);
         Select atSelect = new Select(BasePage.webDriver.findElement(arriveAtSelectBox));
         atSelect.selectByVisibleText(arriveAt);
         Select seatSelect = new Select(BasePage.webDriver.findElement(seatTypeSelectBox));
         seatSelect.selectByVisibleText(seatType);
         Select amountSelect = new Select(BasePage.webDriver.findElement(ticketAmountSelectBox));
         amountSelect.selectByVisibleText(ticketAmount);
-        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(bookTicketButton).click();
     }
 
@@ -109,7 +113,7 @@ public class BookTicketPage extends BasePage {
         ArrayList<String> departDateList = new ArrayList<String>();
         String currentDate = (java.time.LocalDate.now()).toString();
         for (int i = 4; i < 30; i++) {
-            String date = Time.IncreaseOrDecreaseDay("M/d/yyyy", currentDate, i);
+            String date = Time.increaseOrDecreaseDay("M/d/yyyy", currentDate, i);
             departDateList.add(date);
         }
         return departDateList;

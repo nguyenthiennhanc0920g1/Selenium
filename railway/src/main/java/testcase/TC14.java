@@ -34,6 +34,7 @@ public class TC14 extends BaseTest {
         String arriveAt = BookTicketPage.getArriveAtRandom();
         String seatType = BookTicketPage.getSeatTypeRandom();
         String amountTicket = Integer.toString(Number.generateRandomInt(1, 1));
+        assert arriveAt != null;
         bookTicketPage.bookTicket(departDate, departFrom, arriveAt, seatType, amountTicket);
         Scroll.scrollToBottom();
         //Expected Behavior: Message "Ticket booked successfully!" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)

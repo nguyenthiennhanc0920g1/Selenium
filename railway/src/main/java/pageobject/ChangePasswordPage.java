@@ -36,10 +36,10 @@ public class ChangePasswordPage extends BasePage {
     }
 
     public void changePassword(String currentPassword, String newPassword, String confirmPassword) {
+        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(currentPasswordTxt).sendKeys(currentPassword);
         BasePage.webDriver.findElement(newPasswordTxt).sendKeys(newPassword);
         BasePage.webDriver.findElement(confirmPasswordTxt).sendKeys(confirmPassword);
-        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(changePasswordButton).click();
     }
 }

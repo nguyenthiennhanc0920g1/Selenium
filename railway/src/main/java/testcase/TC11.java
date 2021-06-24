@@ -28,8 +28,8 @@ public class TC11 extends BaseTest {
         String actualPasswordMessage = BasePage.webDriver.findElement(registerPage.getPasswordFieldErrorMessage()).getText();
         String actualPassportMessage = BasePage.webDriver.findElement(registerPage.getPassportFieldErrorMessage()).getText();
         String expectedMessage = "There're errors in the form. Please correct the errors and try again.";
-        String expectedPasswordMessage = "Invalid password length.";
-        String expectedPassportMessage = "Invalid ID length.";
+        String expectedPasswordMessage = "Invalid password length";
+        String expectedPassportMessage = "Invalid ID length";
         String errorMessage = "The message content is incorrect";
         Assert.assertEquals(actualMessage, expectedMessage, errorMessage);
         Assert.assertEquals(actualPasswordMessage, expectedPasswordMessage, errorMessage);

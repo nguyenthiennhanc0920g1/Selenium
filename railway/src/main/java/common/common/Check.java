@@ -1,10 +1,17 @@
 package common.common;
 
+import common.util.Scroll;
+import common.util.Time;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageobject.BasePage;
 import pageobject.BookTicketPage;
 import pageobject.ChangePasswordPage;
 import pageobject.RegisterPage;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Check {
     private static BookTicketPage bookTicketPage = new BookTicketPage();
@@ -41,6 +48,8 @@ public class Check {
     }
 
     public static void checkBookTicket(String departDate, String departFrom, String arriveAt, String seatType, String amountTicket) {
+        BasePage.webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Scroll.scrollToBottom();
         String actualMessage = BasePage.webDriver.findElement(bookTicketPage.getBookTicketMessage()).getText();
         String expectedMessage = "Ticket Booked Successfully!";
         String errorMessage = "The message content is incorrect";
@@ -70,9 +79,21 @@ public class Check {
 
     public static void checkChangePassword() {
         String actualMessage = BasePage.webDriver.findElement(changePasswordPage.getChangePasswordMessage()).getText();
-        String expectedMessage = "Your password has been updated";
+        String expectedMessage = "Your password has been updated!";
         String errorMessage = "The message content is incorrect";
         Assert.assertEquals(actualMessage, expectedMessage, errorMessage);
         System.out.println("Change Password successfully");
+    }
+
+    public static boolean isCheckDelete(String departStation, String arriveStation, String seatType, String departDate, String amount) {
+        By deleteButton = By.xpath("//td[2][text()='" + departStation + "']/../td[text()='" + arriveStation + "']" +
+                "/../td[text()='" + seatType + "']/../td[text()='" + departDate + "']/../td[text()='" + amount + "']/../td/input");
+        List<WebElement> webElementList = BasePage.webDriver.findElements(deleteButton);
+        Time.waitLoadContent(5000);
+        if (webElementList.size() == 0) {
+            System.out.println("Delete Successfully");
+            return true;
+        }
+        return false;
     }
 }

@@ -1,41 +1,43 @@
 package testcase;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 import pageobject.BasePage;
 
 public class BaseTest {
-    @BeforeClass
-    public void beforeClass() {
+
+//    @BeforeMethod
+//    public void beforeMethod() {
 //        System.out.println("Pre-condition");
-//        System.setProperty("webdriver.chrome.driver",
-//                "E:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers\\Chrome Driver/chromedriver.exe");
-//        BasePage.webDriver = new ChromeDriver();
+//            System.setProperty("webdriver.chrome.driver",
+//                    "E:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers\\Chrome Driver/chromedriver.exe");
+//            BasePage.webDriver = new ChromeDriver();
 //        BasePage.webDriver.manage().window().maximize();
-    }
+//    }
 
-    @AfterClass
-    public void afterClass() {
-//        System.out.println("Final-condition");
-//        BasePage.webDriver.quit();
-    }
+//    @BeforeMethod
+//    public void beforeMethod() {
+//        System.out.println("Pre-condition");
+//        System.setProperty("webdriver.gecko.driver",
+//                "E:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers\\FireFox Driver/geckodriver.exe");
+//        BasePage.webDriver = new FirefoxDriver();
+//        BasePage.webDriver.manage().window().maximize();
+//    }
 
-    @BeforeTest
+    @BeforeMethod
     @Parameters("browser")
-    public void beforeTest(String browser){
-        if (browser.equalsIgnoreCase("chrome")){
+    public void beforeMethod(String browser) {
+        System.out.println("Pre-condition");
+        if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver",
                     "E:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers\\Chrome Driver/chromedriver.exe");
             BasePage.webDriver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            System.setProperty("webdriver.gecko.driver",
+                    "E:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers\\FireFox Driver/geckodriver.exe");
+            BasePage.webDriver = new FirefoxDriver();
         }
-    }
-
-    @BeforeMethod
-    public void beforeMethod() {
-        System.out.println("Pre-condition");
-        System.setProperty("webdriver.chrome.driver",
-                "E:\\Logigear\\Training\\Automation\\Selenium\\Selenium Jars and Drivers\\Drivers\\Chrome Driver/chromedriver.exe");
-        BasePage.webDriver = new ChromeDriver();
         BasePage.webDriver.manage().window().maximize();
     }
 

@@ -4,6 +4,7 @@ import common.common.Check;
 import common.util.Number;
 import common.util.Scroll;
 import constant.Constant;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobject.BasePage;
 import pageobject.BookTicketPage;
@@ -31,6 +32,11 @@ public class TC16 extends BaseTest {
         String arriveAt = BookTicketPage.getArriveAtRandom();
         String seatType = BookTicketPage.getSeatTypeRandom();
         String amountTicket = Integer.toString(Number.generateRandomInt(1, 1));
+
+        System.out.println(departFrom);
+        System.out.println(arriveAt);
+
+        assert arriveAt != null;
         bookTicketPage.bookTicket(departDate, departFrom, arriveAt, seatType, amountTicket);
         Check.checkBookTicket(departDate, departFrom, arriveAt, seatType, amountTicket);
         //STEP 4: Click on "My ticket" tab
@@ -38,5 +44,7 @@ public class TC16 extends BaseTest {
         Scroll.scrollToBottom();
         //STEP 5 & STEP 6: Click on "Cancel" button of ticket which user want to cancel & Click on "OK" button on Confirmation message "Are you sure?"
         myTicketPage.deleteTicket(departFrom, arriveAt, seatType, departDate, amountTicket);
+        String errorMessage = "Delete Fail";
+        Assert.assertTrue(Check.isCheckDelete(departFrom, arriveAt, seatType, departDate, amountTicket), errorMessage);
     }
 }

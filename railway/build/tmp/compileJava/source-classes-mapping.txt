@@ -2,18 +2,20 @@ pageobject/HomePage.java
  pageobject.HomePage
 pageobject/LoginPage.java
  pageobject.LoginPage
-pageobject/TicketPricePage.java
- pageobject.TicketPricePage
-pageobject/ContactPage.java
- pageobject.ContactPage
-common/util/Time.java
- common.util.Time
+pageobject/FAQPage.java
+ pageobject.FAQPage
+pageobject/RegisterPage.java
+ pageobject.RegisterPage
+common/util/Scroll.java
+ common.util.Scroll
 constant/Constant.java
  constant.Constant
 testcase/Main.java
  testcase.Main
 common/util/Number.java
  common.util.Number
+pageobject/ContactPage.java
+ pageobject.ContactPage
 pageobject/LogoutPage.java
  pageobject.LogoutPage
 pageobject/MyTicketPage.java
@@ -22,45 +24,43 @@ pageobject/TimetablePage.java
  pageobject.TimetablePage
 pageobject/BasePage.java
  pageobject.BasePage
-pageobject/RegisterPage.java
- pageobject.RegisterPage
-pageobject/FAQPage.java
- pageobject.FAQPage
-common/util/Scroll.java
- common.util.Scroll
+pageobject/TicketPricePage.java
+ pageobject.TicketPricePage
 pageobject/ChangePasswordPage.java
  pageobject.ChangePasswordPage
+testcase/TC03.java
+ testcase.TC03
+common/util/Time.java
+ common.util.Time
 testcase/BaseTest.java
  testcase.BaseTest
-testcase/TC06.java
- testcase.TC06
-testcase/TC10.java
- testcase.TC10
-pageobject/BookTicketPage.java
- pageobject.BookTicketPage
-testcase/TC09.java
- testcase.TC09
-testcase/TC02.java
- testcase.TC02
-testcase/TC07.java
- testcase.TC07
-testcase/TC15.java
- testcase.TC15
-common/common/Check.java
- common.common.Check
 testcase/TC04.java
  testcase.TC04
-testcase/TC01.java
- testcase.TC01
+testcase/TC10.java
+ testcase.TC10
 testcase/TC05.java
  testcase.TC05
+testcase/TC02.java
+ testcase.TC02
+testcase/TC11.java
+ testcase.TC11
+common/common/Check.java
+ common.common.Check
+testcase/TC06.java
+ testcase.TC06
+pageobject/BookTicketPage.java
+ pageobject.BookTicketPage
+testcase/TC01.java
+ testcase.TC01
+testcase/TC09.java
+ testcase.TC09
 testcase/TC08.java
  testcase.TC08
 testcase/TC14.java
  testcase.TC14
 testcase/TC16.java
  testcase.TC16
-testcase/TC03.java
- testcase.TC03
-testcase/TC11.java
- testcase.TC11
+testcase/TC07.java
+ testcase.TC07
+testcase/TC15.java
+ testcase.TC15

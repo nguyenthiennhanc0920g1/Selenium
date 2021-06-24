@@ -62,11 +62,11 @@ public class RegisterPage extends BasePage {
     }
 
     public void register(String email, String password, String confirmPassword, String passportNumber) {
+        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(emailTxt).sendKeys(email);
         BasePage.webDriver.findElement(passwordTxt).sendKeys(password);
         BasePage.webDriver.findElement(confirmPasswordTxt).sendKeys(confirmPassword);
         BasePage.webDriver.findElement(passportTxt).sendKeys(passportNumber);
-        Scroll.scrollToBottom();
         BasePage.webDriver.findElement(registerButton).click();
     }
 }

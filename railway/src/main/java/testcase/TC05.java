@@ -1,5 +1,6 @@
 package testcase;
 
+import common.util.Scroll;
 import constant.Constant;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -22,6 +23,7 @@ public class TC05 extends BaseTest {
         //Repeat step 3 three more times.
         for (int i = 0; i < 6; i++) {
             loginPage.login(Constant.USERNAME, "invalid password");
+            Scroll.scrollToBottom();
             BasePage.webDriver.findElement(loginPage.getEmailTxt()).clear();
         }
         //Expected Behavior: User can't login and message "You have used 4 out of 5 login attempts. After all 5 have been used, you
