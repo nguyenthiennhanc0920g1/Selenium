@@ -12,6 +12,7 @@ public class TC11 extends BaseTest {
 
     @Test
     public void TC11() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC11");
         System.out.println("TC11-User can't create account while password and PID fields are empty");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

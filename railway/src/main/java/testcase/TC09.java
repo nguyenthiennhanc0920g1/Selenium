@@ -13,6 +13,7 @@ public class TC09 extends BaseTest {
 
     @Test
     public void TC09() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC09");
         System.out.println("TC09-User can change password");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

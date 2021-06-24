@@ -18,6 +18,7 @@ public class TC16 extends BaseTest {
 
     @Test
     public void TC16() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC16");
         System.out.println("TC16-User can cancel a ticket");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

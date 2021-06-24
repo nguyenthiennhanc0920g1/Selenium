@@ -1,6 +1,8 @@
 package common.util;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.sql.Date;
 
@@ -20,5 +22,11 @@ public class Time {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getCurrentTime() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
+        LocalDateTime currentTime = LocalDateTime.now();
+        return dateTimeFormatter.format(currentTime);
     }
 }

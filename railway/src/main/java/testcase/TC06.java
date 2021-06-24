@@ -16,6 +16,7 @@ public class TC06 extends BaseTest {
 
     @Test
     public void TC06() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC06");
         System.out.println("TC06-Additional pages display once user logged in");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

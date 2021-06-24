@@ -15,6 +15,7 @@ public class TC14 extends BaseTest {
 
     @Test
     public void TC14() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC14");
         System.out.println("TC14-User can book 1 ticket at a time");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

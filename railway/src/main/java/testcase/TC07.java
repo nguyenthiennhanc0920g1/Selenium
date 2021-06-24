@@ -12,6 +12,7 @@ public class TC07 extends BaseTest {
 
     @Test
     public void TC07() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC07");
         System.out.println("TC07-User can create new account");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

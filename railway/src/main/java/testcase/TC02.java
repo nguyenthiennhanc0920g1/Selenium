@@ -11,6 +11,7 @@ public class TC02 extends BaseTest {
 
     @Test
     public void TC02() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC02");
         System.out.println("TC02-User can't login with blank \"Username\" textbox");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

@@ -17,6 +17,7 @@ public class TC15 extends BaseTest {
 
     @Test
     public void TC15() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC15");
         System.out.println("TC15-User can open \"Book ticket\" page by clicking on \"Book ticket\" link in \"Train timetable\" page");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

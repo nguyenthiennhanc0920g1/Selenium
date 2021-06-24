@@ -11,6 +11,7 @@ public class TC01 extends BaseTest {
 
     @Test
     public void TC01() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC01");
         System.out.println("TC01-User can log into Railway with valid username and password");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

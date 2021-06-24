@@ -12,6 +12,7 @@ public class TC08 extends BaseTest {
 
     @Test
     public void TC08() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC08");
         System.out.println("TC08-User can't login with an account hasn't been activated");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

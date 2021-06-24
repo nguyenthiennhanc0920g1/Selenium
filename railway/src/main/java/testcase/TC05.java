@@ -12,6 +12,7 @@ public class TC05 extends BaseTest {
 
     @Test
     public void TC05() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC05");
         System.out.println("TC05-System shows message when user enters wrong password several times");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);

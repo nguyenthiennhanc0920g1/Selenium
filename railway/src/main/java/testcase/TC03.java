@@ -11,6 +11,7 @@ public class TC03 extends BaseTest {
 
     @Test
     public void TC03() {
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC01");
         System.out.println("TC03-User cannot log into Railway with invalid password ");
         //STEP 1: Navigate to QA Railway Website
         BasePage.webDriver.get(Constant.HOME_URL);
