@@ -1,5 +1,6 @@
 package testcase;
 
+import common.common.Log;
 import common.util.Number;
 import constant.Constant;
 import org.testng.Assert;
@@ -12,15 +13,23 @@ public class TC11 extends BaseTest {
 
     @Test
     public void TC11() {
-        BaseTest.extentTest = BaseTest.extentReports.createTest("TC11");
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC11-User can't create account while password and PID fields are empty");
         System.out.println("TC11-User can't create account while password and PID fields are empty");
+
         //STEP 1: Navigate to QA Railway Website
+        Log.logInfo("STEP 1: Navigate to QA Railway Website.");
         BasePage.webDriver.get(Constant.HOME_URL);
+
         //STEP 2: Click on "Register" tab
+        Log.logInfo("STEP 2: Click on \"Register\" tab.");
         BasePage.goToTab(BasePage.getRegisterTab());
+
         //STEP 3 & STEP 4: Enter valid email address and leave other fields empty & Click on "Register" button
+        Log.logInfo("STEP 3: Enter valid email address and leave other fields empty.");
+        Log.logInfo("STEP 4: Click on \"Register\" button.");
         String rdEmail = Number.generateRandomInt(100000, 999999) + "@gmail.com";
         registerPage.register(rdEmail, "", "", "");
+
         //Expected Behavior:
         //Message "There're errors in the form. Please correct the errors and try again." appears above the form.
         //Next to password fields, error message "Invalid password length." displays

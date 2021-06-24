@@ -81,8 +81,9 @@ public class BaseTest {
         if (result.getStatus() == ITestResult.FAILURE) {
             extentTest.log(Status.FAIL, "TESTCASE FAILED IS " + result.getName());
             extentTest.log(Status.FAIL, "TESTCASE FAILED IS " + result.getThrowable());
-
             String screenshotPath = Screen.getScreenshot(BasePage.webDriver, result.getName(), browser);
+            String[] str = screenshotPath.split("\\\\");
+            extentTest.log(Status.FAIL, "<a><img alt=\\\"Error\\\" style=\"width:600px;height:300px;\" src=\"../../screenshots/" + browser + "/" + str[str.length - 1] + "\"></a>");
             try {
                 extentTest.addScreenCaptureFromPath(screenshotPath);
             } catch (IOException e) {

@@ -44,6 +44,8 @@ testcase/TC09.java
  testcase.TC09
 testcase/TC02.java
  testcase.TC02
+common/common/Log.java
+ common.common.Log
 testcase/TC07.java
  testcase.TC07
 testcase/TC15.java

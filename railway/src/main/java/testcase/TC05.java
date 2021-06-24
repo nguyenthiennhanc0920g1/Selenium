@@ -1,5 +1,6 @@
 package testcase;
 
+import common.common.Log;
 import common.util.Scroll;
 import constant.Constant;
 import org.testng.Assert;
@@ -12,21 +13,30 @@ public class TC05 extends BaseTest {
 
     @Test
     public void TC05() {
-        BaseTest.extentTest = BaseTest.extentReports.createTest("TC05");
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC05-System shows message when user enters wrong password several times");
         System.out.println("TC05-System shows message when user enters wrong password several times");
+
         //STEP 1: Navigate to QA Railway Website
+        Log.logInfo("STEP 1: Navigate to QA Railway Website.");
         BasePage.webDriver.get(Constant.HOME_URL);
+
         //STEP 2: Click on "Login" tab
+        Log.logInfo("STEP 2: Click on \"Login\" tab.");
         BasePage.goToTab(BasePage.getLoginTab());
+
         //STEP 3 & STEP 4 & STEP 5:
         //Enter valid information into "Username" textbox except "Password" textbox.
         //Click on "Login" button
         //Repeat step 3 three more times.
+        Log.logInfo("STEP 3: Enter valid information into \"Username\" textbox except \"Password\" textbox.");
+        Log.logInfo("STEP 4: Click on \"Login\" button.");
+        Log.logInfo("STEP 5: Repeat step 3 three more times.");
         for (int i = 0; i < 6; i++) {
             loginPage.login(Constant.USERNAME, "invalid password");
             Scroll.scrollToBottom();
             BasePage.webDriver.findElement(loginPage.getEmailTxt()).clear();
         }
+
         //Expected Behavior: User can't login and message "You have used 4 out of 5 login attempts. After all 5 have been used, you
         String actualMessage = BasePage.webDriver.findElement(loginPage.getErrorLoginFormMessage()).getText();
         String expectedMessage = "You have used 4 out of 5 login attempts. After all 5 have been used," +

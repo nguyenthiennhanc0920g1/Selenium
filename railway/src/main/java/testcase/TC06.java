@@ -1,6 +1,7 @@
 package testcase;
 
 import common.common.Check;
+import common.common.Log;
 import constant.Constant;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,15 +17,22 @@ public class TC06 extends BaseTest {
 
     @Test
     public void TC06() {
-        BaseTest.extentTest = BaseTest.extentReports.createTest("TC06");
+        BaseTest.extentTest = BaseTest.extentReports.createTest("TC06-Additional pages display once user logged in");
         System.out.println("TC06-Additional pages display once user logged in");
+
         //STEP 1: Navigate to QA Railway Website
+        Log.logInfo("STEP 1: Navigate to QA Railway Website.");
         BasePage.webDriver.get(Constant.HOME_URL);
+
         //STEP 2: Click on "Login" tab
+        Log.logInfo("STEP 2: Click on \"Login\" tab.");
         BasePage.goToTab(BasePage.getLoginTab());
+
         //STEP 3: Login with valid account
+        Log.logInfo("STEP 3: Login with valid account.");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         Check.checkLoginException(Constant.USERNAME);
+
         //Expected Behavior:
         //"My ticket", "Change password" and "Logout" tabs are displayed
         //Click "My ticket" tab, user will be directed to My ticket page
