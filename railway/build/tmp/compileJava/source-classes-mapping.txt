@@ -32,6 +32,8 @@ pageobject/ContactPage.java
  pageobject.ContactPage
 common/util/Scroll.java
  common.util.Scroll
+common/util/Screen.java
+ common.util.Screen
 testcase/BaseTest.java
  testcase.BaseTest
 testcase/TC06.java
@@ -58,8 +60,6 @@ testcase/TC14.java
  testcase.TC14
 testcase/TC16.java
  testcase.TC16
-common/util/Screen.java
- common.util.Screen
 testcase/TC03.java
  testcase.TC03
 testcase/TC11.java

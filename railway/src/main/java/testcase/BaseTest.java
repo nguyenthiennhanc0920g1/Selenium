@@ -91,7 +91,7 @@ public class BaseTest {
         } else if (result.getStatus() == ITestResult.SKIP) {
             extentTest.log(Status.SKIP, "TESTCASE SKIPPED IS " + result.getName());
         } else if (result.getStatus() == ITestResult.SUCCESS) {
-            extentTest.log(Status.SKIP, "TESTCASE PASSED IS " + result.getName());
+            extentTest.log(Status.PASS, "TESTCASE PASSED IS " + result.getName());
         }
     }
 }
